@@ -13,11 +13,11 @@ public class CodePanel : MonoBehaviour {
 	void Update () {
 		codeText.text = codeTextValue;
 
-		if (codeTextValue == "ðß§") {
-			Cat.isSafeOpened = true;
+		if (codeTextValue == "ðð§ß§") {
+			PuzzlePuertas.isSafeOpened = true;
 		}
 
-		if (codeTextValue.Length >= 3)
+		if (codeTextValue.Length >= 5)
 			codeTextValue = "";
 	}
 

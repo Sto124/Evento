@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cat : MonoBehaviour {
+public class PuzzlePuertas : MonoBehaviour {
 
 	Rigidbody2D rb;
-	float moveSpeed = 5f, dirX;
-
+	
 	[SerializeField]
 	GameObject codePanel, closedSafe, openedSafe;
 
@@ -22,18 +21,12 @@ public class Cat : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		dirX = Input.GetAxis ("Horizontal") * moveSpeed;
-
+		
 		if (isSafeOpened) {
 			codePanel.SetActive (false);
 			closedSafe.SetActive (false);
 			openedSafe.SetActive (true);
 		}
-	}
-
-	void FixedUpdate ()
-	{
-		rb.velocity = new Vector2 (dirX, rb.velocity.y);
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
